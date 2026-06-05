@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Prediction System</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:linear-gradient(135deg,#667eea,#764ba2);
+        }
+
+        .container{
+            background:white;
+            width:450px;
+            padding:30px;
+            border-radius:15px;
+            box-shadow:0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        h1{
+            text-align:center;
+            color:#333;
+            margin-bottom:20px;
+        }
+
+        .input-group{
+            margin-bottom:15px;
+        }
+
+        label{
+            display:block;
+            font-weight:bold;
+            margin-bottom:5px;
+            color:#444;
+        }
+
+        input{
+            width:100%;
+            padding:12px;
+            border:1px solid #ccc;
+            border-radius:8px;
+            font-size:16px;
+        }
+
+        input:focus{
+            outline:none;
+            border-color:#667eea;
+        }
+
+        button{
+            width:100%;
+            padding:12px;
+            background:#667eea;
+            color:white;
+            border:none;
+            border-radius:8px;
+            font-size:18px;
+            cursor:pointer;
+            margin-top:10px;
+        }
+
+        button:hover{
+            background:#5a67d8;
+        }
+
+        .result{
+            margin-top:20px;
+            text-align:center;
+            font-size:22px;
+            font-weight:bold;
+            color:green;
+        }
+
+        .icon{
+            text-align:center;
+            font-size:60px;
+            margin-bottom:10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="icon">📈</div>
+
+    <h1>Sales Prediction System</h1>
+
+    <form action="/predict" method="POST">
+
+    <input type="number"
+           name="marketing"
+           placeholder="Enter Marketing Spend"
+           required>
+
+    <input type="number"
+           name="customers"
+           placeholder="Enter Number of Customers"
+           required>
+
+    <button type="submit">
+        Predict Sales
+    </button>
+
+</form>
+
+    <div class="result">
+        {{ prediction_text }}
+    </div>
+
+</div>
+
+</body>
+</html>
